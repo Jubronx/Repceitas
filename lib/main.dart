@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:repceitas2/detailsPage.dart';
+=======
+>>>>>>> aff382ce90686bd834176a3a0e056c070a3aeca1
 
 void main() => runApp(MyApp());
 
@@ -52,7 +55,11 @@ class _MyHomePageState extends State<MyHomePage> {
                           onPressed: () {},
                         )
                       ],
+<<<<<<< HEAD
                     ))
+=======
+                    )),
+>>>>>>> aff382ce90686bd834176a3a0e056c070a3aeca1
               ],
             ),
           ),
@@ -61,6 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
             padding: EdgeInsets.only(left: 40.0),
             child: Row(
               children: <Widget>[
+<<<<<<< HEAD
                 Text('Repceitas',
                     style: TextStyle(
                         fontFamily: 'Montserrat',
@@ -73,6 +81,24 @@ class _MyHomePageState extends State<MyHomePage> {
                         fontFamily: 'Montserrat',
                         color: Colors.white,
                         fontSize: 20.0))
+=======
+                Text(
+                  'Repceitas',
+                  style: TextStyle(
+                      fontFamily: 'Montserrat',
+                      color: Colors.yellow,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30.0),
+                ),
+                SizedBox(width: 10.0),
+                Text(
+                  'para republicas',
+                  style: TextStyle(
+                      fontFamily: 'Montserrat',
+                      color: Colors.white,
+                      fontSize: 20.0),
+                ),
+>>>>>>> aff382ce90686bd834176a3a0e056c070a3aeca1
               ],
             ),
           ),
@@ -92,6 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Container(
                         height: MediaQuery.of(context).size.height - 300.0,
                         child: ListView(children: [
+<<<<<<< HEAD
                           _buildFoodItem('assets/plate1.png', 'Macarrão',
                               'FLAVIO CARALHO'),
                           _buildFoodItem('assets/plate2.png', 'Arroz',
@@ -104,10 +131,22 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
           )
+=======
+                          buildFoodItem('assets/plate1.png', 'Comida1', ''),
+                          buildFoodItem('assets/plate2.png', 'Comida2', ''),
+                          buildFoodItem('assets/plate3.png', 'Comida3', ''),
+                          buildFoodItem('assets/plate4.png', 'Comida4', ''),
+                          buildFoodItem('assets/plate5.png', 'Comida5', ''),
+                        ])))
+              ],
+            ),
+          ),
+>>>>>>> aff382ce90686bd834176a3a0e056c070a3aeca1
         ],
       ),
     );
   }
+<<<<<<< HEAD
 
   Widget _buildFoodItem(String imgPath, String foodName, String foodReceita) {
     return Padding(
@@ -154,4 +193,59 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             )));
   }
+=======
+}
+
+Widget buildFoodItem(String imgPath, String foodName, String price) {
+  return Padding(
+      padding: EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
+      child: InkWell(
+        onTap: () {},
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Container(
+              child: Row(
+                children: [
+                  Hero(
+                    tag: imgPath,
+                    child: Image(
+                      image: AssetImage(imgPath),
+                      fit: BoxFit.cover,
+                      height: 75.0,
+                      width: 75.0,
+                    ),
+                  ),
+                  SizedBox(width: 10.0),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        foodName,
+                        style: TextStyle(
+                            fontFamily: 'Montserrat',
+                            fontSize: 17.0,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        foodName,
+                        style: TextStyle(
+                            fontFamily: 'Montserrat',
+                            fontSize: 15.0,
+                            color: Colors.grey),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            IconButton(
+              icon: Icon(Icons.arrow_forward_ios),
+              color: Colors.black,
+              onPressed: () {},
+            ),
+          ],
+        ),
+      ));
+>>>>>>> aff382ce90686bd834176a3a0e056c070a3aeca1
 }
