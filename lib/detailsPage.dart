@@ -17,7 +17,7 @@ class _DetailsPageState extends State<DetailsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xFFFCDAB7),
+        backgroundColor: Color(0xFF7d0633),
         appBar: AppBar(
           leading: IconButton(
             onPressed: () {
@@ -28,10 +28,10 @@ class _DetailsPageState extends State<DetailsPage> {
           ),
           backgroundColor: Colors.transparent,
           elevation: 0.0,
-          title: Text('Receita',
+          title: Text('',
               style: TextStyle(
                   fontFamily: 'Montserrat',
-                  fontSize: 18.0,
+                  fontSize: 30.0,
                   color: Colors.black)),
           centerTitle: true,
           actions: <Widget>[
@@ -48,7 +48,6 @@ class _DetailsPageState extends State<DetailsPage> {
                 height: MediaQuery.of(context).size.height - 82.0,
                 width: MediaQuery.of(context).size.width,
                 color: Colors.transparent),
-            //O CARD ATRAS VEM AQUI
             Positioned(
                 top: 75.0,
                 child: Container(
@@ -60,7 +59,6 @@ class _DetailsPageState extends State<DetailsPage> {
                         color: Colors.white),
                     height: MediaQuery.of(context).size.height - 100.0,
                     width: MediaQuery.of(context).size.width)),
-            //A IMAGEM VEM AQUI
             Positioned(
                 top: 30.0,
                 left: (MediaQuery.of(context).size.width / 2) - 100.0,
@@ -73,7 +71,6 @@ class _DetailsPageState extends State<DetailsPage> {
                                 fit: BoxFit.cover)),
                         height: 200.0,
                         width: 200.0))),
-            //NOME DA COMIDA
             Positioned(
                 top: 250.0,
                 left: 25.0,
@@ -86,9 +83,19 @@ class _DetailsPageState extends State<DetailsPage> {
                             fontFamily: 'Montserrat',
                             fontSize: 22.0,
                             fontWeight: FontWeight.bold)),
+                    SizedBox(height: 20.0),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Text(widget.foodReceita,
+                            style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                fontSize: 20.0,
+                                color: Colors.black)),
+                      ],
+                    ),
                   ],
-                )),
-            //INGREDIENTES
+                ))
           ])
         ]));
   }
