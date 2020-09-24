@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:repceitas2/detailsPage.dart';
+import 'package:repceitas_app/detailsPage.dart';
 
 void main() => runApp(MyApp());
 
@@ -23,7 +23,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF008B8B),
+      backgroundColor: Color(0xFF7d0633),
       body: ListView(
         children: <Widget>[
           Padding(
@@ -52,11 +52,11 @@ class _MyHomePageState extends State<MyHomePage> {
                           onPressed: () {},
                         )
                       ],
-                    )),
+                    ))
               ],
             ),
           ),
-          SizedBox(height: 25.0),
+          SizedBox(height: 30.0),
           Padding(
             padding: EdgeInsets.only(left: 40.0),
             child: Row(
@@ -64,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Text('Repceitas',
                     style: TextStyle(
                         fontFamily: 'Montserrat',
-                        color: Colors.yellow,
+                        color: Colors.white,
                         fontWeight: FontWeight.bold,
                         fontSize: 35.0)),
                 SizedBox(width: 10.0),
@@ -72,23 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     style: TextStyle(
                         fontFamily: 'Montserrat',
                         color: Colors.white,
-                        fontSize: 20.0)),
-                Text(
-                  'Repceitas',
-                  style: TextStyle(
-                      fontFamily: 'Montserrat',
-                      color: Colors.yellow,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 30.0),
-                ),
-                SizedBox(width: 10.0),
-                Text(
-                  'para republicas',
-                  style: TextStyle(
-                      fontFamily: 'Montserrat',
-                      color: Colors.white,
-                      fontSize: 20.0),
-                ),
+                        fontSize: 18.0))
               ],
             ),
           ),
@@ -108,73 +92,58 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Container(
                         height: MediaQuery.of(context).size.height - 300.0,
                         child: ListView(children: [
-                          _buildFoodItem('assets/plate1.png', 'Macarrão',
-                              'FLAVIO CARALHO'),
-                          _buildFoodItem('assets/plate2.png', 'Arroz',
-                              'EU ODEIO A LUCIANA'),
                           _buildFoodItem(
-                              'assets/plate6.png', 'Feijão', 'ODEIO TAMBEM'),
+                              'assets/plate1.png', 'Macarrão', 'lorem ipsum'),
                           _buildFoodItem(
-                              'assets/plate5.png', 'Berry bowl', 'ODEIO LEGAL')
-                        ])))
+                              'assets/plate2.png', 'Feijão', 'lorem ipsum'),
+                          _buildFoodItem(
+                              'assets/plate6.png', 'Arroz', 'lorem ipsum'),
+                          _buildFoodItem(
+                              'assets/plate5.png', 'Salada', 'lorem, ipsum')
+                        ]))),
               ],
             ),
-          ),
+          )
         ],
       ),
     );
   }
-}
 
-Widget _buildFoodItem(String imgPath, String foodName, String price) {
-  return Padding(
-      padding: EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
-      child: InkWell(
-        onTap: () {},
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Container(
-              child: Row(
-                children: [
+  Widget _buildFoodItem(String imgPath, String foodName, String receita) {
+    return Padding(
+        padding: EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
+        child: InkWell(
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => DetailsPage(
+                      heroTag: imgPath,
+                      foodName: foodName,
+                      foodReceita: receita)));
+            },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Container(
+                    child: Row(children: [
                   Hero(
-                    tag: imgPath,
-                    child: Image(
-                      image: AssetImage(imgPath),
-                      fit: BoxFit.cover,
-                      height: 75.0,
-                      width: 75.0,
-                    ),
-                  ),
+                      tag: imgPath,
+                      child: Image(
+                          image: AssetImage(imgPath),
+                          fit: BoxFit.cover,
+                          height: 75.0,
+                          width: 75.0)),
                   SizedBox(width: 10.0),
                   Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        foodName,
-                        style: TextStyle(
-                            fontFamily: 'Montserrat',
-                            fontSize: 17.0,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        foodName,
-                        style: TextStyle(
-                            fontFamily: 'Montserrat',
-                            fontSize: 15.0,
-                            color: Colors.grey),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            IconButton(
-              icon: Icon(Icons.arrow_forward_ios),
-              color: Colors.black,
-              onPressed: () {},
-            ),
-          ],
-        ),
-      ));
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(foodName,
+                            style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                fontSize: 17.0,
+                                fontWeight: FontWeight.bold)),
+                      ])
+                ])),
+              ],
+            )));
+  }
 }
