@@ -1,8 +1,6 @@
-<<<<<<< HEAD
-name: repceitas2
-=======
+name: repceitas_app
 name: fruithero
->>>>>>> aff382ce90686bd834176a3a0e056c070a3aeca1
+
 description: A new Flutter project.
 
 # The following defines the version and build number for your application.
@@ -45,7 +43,7 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  assets:
+ assets:
    - assets/plate1.png
    - assets/plate2.png
    - assets/plate3.png
@@ -64,7 +62,7 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  fonts:
+ fonts:
     - family: Montserrat
       fonts:
         - asset: assets/Montserrat-Regular.ttf
