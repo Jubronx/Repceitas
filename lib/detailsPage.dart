@@ -4,8 +4,10 @@ class DetailsPage extends StatefulWidget {
   final heroTag;
   final foodName;
   final foodReceita;
+  final foodPreparo;
 
-  DetailsPage({this.heroTag, this.foodName, this.foodReceita});
+  DetailsPage(
+      {this.heroTag, this.foodName, this.foodReceita, this.foodPreparo});
 
   @override
   _DetailsPageState createState() => _DetailsPageState();
@@ -72,25 +74,46 @@ class _DetailsPageState extends State<DetailsPage> {
                         height: 200.0,
                         width: 200.0))),
             Positioned(
-                top: 250.0,
+                top: 210.0,
                 left: 25.0,
                 right: 25.0,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(widget.foodName,
-                        style: TextStyle(
-                            fontFamily: 'Montserrat',
-                            fontSize: 22.0,
-                            fontWeight: FontWeight.bold)),
-                    SizedBox(height: 20.0),
+                    SizedBox(height: 22.0),
+                    Text(
+                      'Ingredientes\n',
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                          fontFamily: 'Montserrat',
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold),
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         Text(widget.foodReceita,
                             style: TextStyle(
                                 fontFamily: 'Montserrat',
-                                fontSize: 20.0,
+                                fontSize: 16.0,
+                                color: Colors.black)),
+                      ],
+                    ),
+                    Text(
+                      '\nModo de preparo\n',
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                          fontFamily: 'Montserrat',
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Text(widget.foodPreparo,
+                            style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                fontSize: 16.0,
                                 color: Colors.black)),
                       ],
                     ),
