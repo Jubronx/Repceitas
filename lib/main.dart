@@ -67,12 +67,10 @@ class _WidgetLoginState extends State<WidgetLogin> {
         body: Center(
             child: Container(
       color: Color(0xFF7d0633),
-      padding: const EdgeInsets.all(40.0),
+      padding: const EdgeInsets.only(top: 110.0, left: 40.0, right: 40.0),
       child: Column(
         children: <Widget>[
-          SizedBox(
-            height: 150.0,
-          ),
+          SizedBox(height: 150.0, child: Image.asset("assets/login.png")),
           SizedBox(height: 40.0),
           emailField,
           SizedBox(height: 20.0),
