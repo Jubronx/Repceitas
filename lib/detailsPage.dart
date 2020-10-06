@@ -14,9 +14,7 @@ class DetailsPage extends StatefulWidget {
 }
 
 class _DetailsPageState extends State<DetailsPage> {
-  var selectedCard = 'PESO';
-
-  @override
+ @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Color(0xFF7d0633),
@@ -121,11 +119,5 @@ class _DetailsPageState extends State<DetailsPage> {
                 ))
           ])
         ]));
-  }
-
-  selectCard(cardTitle) {
-    setState(() {
-      selectedCard = cardTitle;
-    });
   }
 }
