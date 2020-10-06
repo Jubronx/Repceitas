@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:repceitas_app/detailsPage.dart';
+import 'package:repceitas_app/main.dart';
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -35,9 +36,15 @@ class _MyHomePageState extends State<MyHomePage> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         IconButton(
-                          icon: Icon(Icons.menu),
+                          icon: Icon(Icons.exit_to_app),
                           color: Colors.white,
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => WidgetLogin()),
+                            );
+                          },
                         )
                       ],
                     ))
